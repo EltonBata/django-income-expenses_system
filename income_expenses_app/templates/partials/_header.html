@@ -1,0 +1,17 @@
+{% load static %}
+
+<nav
+    class="h-13 left-0 md:left-60 top-0 right-0 p-3 bg-white flex items-center fixed border-b border-neutral-300">
+    
+    <button type="button" class="border px-1 rounded me-2 border-neutral-400 md:hidden sidebar-open">
+        <i data-feather="menu" class="text-neutral-400" width="20px"></i>
+    </button>
+
+    <a href="{% url "home" %}" class="font-bold text-lg hover:opacity-80 md:hidden">Income Expenses</a>
+    
+    <ul class="grow">
+        <li class="w-fit ms-auto font-medium">
+            <a href="" class="flex items-center gap-2 hover:opacity-80">Logout <i data-feather="log-out" width="20px"></i> </a>
+        </li>
+    </ul>
+</nav>
