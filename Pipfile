@@ -9,6 +9,7 @@ mysqlclient = "*"
 python-dotenv = "*"
 djlint = "*"
 gunicorn = "*"
+validate-email = "*"
 
 [dev-packages]
 

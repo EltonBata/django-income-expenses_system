@@ -21,7 +21,7 @@
 
 
         <main class="h-screen w-screen p-6 flex items-center justify-center">
-            <div class="bg-orange-500 absolute top-0 left-0 right-0 bottom-1/2 z-1 rounded-b-[50px] layer">
+            <div class="bg-neutral-700 absolute top-0 left-0 right-0 bottom-1/2 z-1 rounded-b-[50px] layer">
 
             </div>
             {% block content %}{% endblock content %}
@@ -36,5 +36,7 @@
         <script src="https://unpkg.com/feather-icons"></script>
 
         <script src="{% static 'js/main.js' %}"></script>
+
+        {% block js %}{% endblock js %}
     </body>
 </html>

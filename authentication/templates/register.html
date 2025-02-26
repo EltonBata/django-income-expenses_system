@@ -1,4 +1,8 @@
-{% extends "auth_layout.html" %} {% block title %}Register{% endblock title %}
+{% extends "auth_layout.html" %} 
+
+{% load static %}
+
+{% block title %}Register{% endblock title %}
 {% block content %}
 
 <div class="bg-white shadow-md rounded-lg p-8 z-10 max-w-[400px]">
@@ -8,26 +12,48 @@
         more.
     </p>
 
-    <div class="my-10">
+    <div class="my-5">
         <div class="my-3">
             <label for="" class="font-semibold text-sm">Username:</label>
-            <input type="text" name="username" class="input" placeholder="example" />
+            <input
+                type="text"
+                name="username"
+                id="register_username"
+                class="input"
+                placeholder="example" />
+
+                <small class="text-red-500" id="username_error"></small>
+                <small class="text-green-600" id="username_checking"></small>
         </div>
 
         <div class="my-3">
             <label for="" class="font-semibold text-sm">Email:</label>
-            <input type="text" name="email" class="input" placeholder="example@test.com" />
+            <input
+                type="email"
+                name="email"
+                id="register_email"
+                class="input"
+                placeholder="example@test.com" />
+
+                <small class="text-red-500" id="email_error"></small>
+                <small class="text-green-600" id="email_checking"></small>
+
         </div>
 
-        <div class="my-3">
-            <label for="" class="font-semibold text-sm">Password:</label>
-            <input type="password" name="password" class="input" />
+        <div>
+            <div class="relative">
+                <label for="" class="font-semibold text-sm">Password:</label>
+                <input type="password" name="password" id="register_password" class="input" placeholder="password" />
+                <button class="absolute top-1/2 right-2 hover:cursor-pointer password-toggler" data-show=false>
+                    <i data-feather="eye"></i>
+                </button>
+            </div>
         </div>
 
         <div class="mt-5 text-end">
             <button
                 type="submit"
-                class="py-2 font-semibold w-full rounded-full text-white bg-orange-600 hover:bg-orange-700 hover:cursor-pointer text-sm">
+                class="py-2 font-semibold w-full rounded-full text-white bg-neutral-600 hover:bg-neutral-700 hover:cursor-pointer text-sm">
                 Register
             </button>
         </div>
@@ -35,3 +61,8 @@
 </div>
 
 {% endblock content %}
+
+
+{% block js %}
+<script src="{% static "js/register.js" %}"></script>
+{% endblock js %}
